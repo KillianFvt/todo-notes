@@ -1,10 +1,8 @@
 from django.contrib.auth import logout, login, authenticate
-from django.contrib.auth.models import AnonymousUser
 from django.db import IntegrityError
 from .models import User
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .backends import EmailBackend
 
 
 @api_view(['POST'])
@@ -62,15 +60,12 @@ def account_logout(request):
 
 @api_view(['GET'])
 def get_user(request):
-    user_id = request.session.get('_auth_user_id', default=None)
+    user = request.user
 
-    if user_id is None:
-        print("not logged in")
+    if user.is_anonymous:
         return Response({
-            'error': 'not logged in'
-        })
-    else:
-        user = User.objects.get(id=user_id)
+            'error': "User is not authenticated"
+        }, status=400)
 
     return Response({
         'username': user.get_username(),
