@@ -1,0 +1,45 @@
+.logout-page, .logout-page > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-page {
+    min-height: calc(40vh);
+}
+
+.logout-page h3 {
+    font-size: 25px;
+    margin-bottom: 75px;
+}
+
+#logout-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+#logout-btns button {
+    --btn-color: #52528C;
+    background-color: transparent;
+    border: solid var(--btn-color);
+    border-radius: 5px;
+    color: var(--btn-color);
+    font-size: 25px;
+    padding: 5px 15px;
+    cursor: pointer;
+
+    transition: all 0.25s ease-out;
+}
+
+#logout-btns button:last-child {
+    --btn-color: #b60000;
+}
+
+#logout-btns button:hover {
+    background-color: var(--btn-color);
+    border-color: transparent;
+    color: white;
+}

@@ -1,0 +1,10 @@
+.notes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notes-list {
+    max-width: 600px;
+    width: 100%;
+}

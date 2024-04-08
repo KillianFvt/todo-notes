@@ -1,0 +1,26 @@
+.list-note-container {
+    background-color: #52528C;
+    padding: 5px;
+    margin: 10px 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: #22223a 0 10px 10px -5px;
+}
+
+.list-note-container h3 {
+    color: white;
+    padding: 0;
+    margin: 5px;
+}
+
+.list-note-container p, .list-note-container p:visited {
+    color: #9097C0;
+    padding: 0;
+    margin: 5px;
+}

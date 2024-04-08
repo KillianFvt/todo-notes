@@ -1,0 +1,15 @@
+.note-page {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.note-title {
+    color: #9097C0;
+}
+
+.note-page textarea {
+    color: white;
+    background-color: transparent;
+    border: none;
+}
