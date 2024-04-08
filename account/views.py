@@ -1,11 +1,14 @@
 from django.contrib.auth import logout, login, authenticate
 from django.db import IntegrityError
+from django.views.decorators.csrf import csrf_exempt, requires_csrf_token
+
 from .models import User
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
 
 @api_view(['POST'])
+@requires_csrf_token
 def register(request):
 
     data = request.data
@@ -35,11 +38,6 @@ def register(request):
     if user is not None:
         login(request, user)
         request.session.save()
-        print(request.session.keys())
-        print(request.session.values())
-        print(f'logged in {user}')
-        print(user.is_authenticated)
-        print(user.is_anonymous)
     else:
         return Response({
             'error': "An error occurred while logging in the user. Please try again.",
@@ -48,6 +46,30 @@ def register(request):
     return Response({
         'message': "account successfully created",
     }, status=201)
+
+
+@api_view(['POST'])
+@requires_csrf_token
+def account_login(request):
+    print(request.headers)
+
+    logout(request)
+
+    data = request.data
+
+    user = authenticate(request, username=data["email"], password=data["password"])
+
+    if user is not None:
+        login(request, user)
+        request.session.save()
+    else:
+        return Response({
+            'error': "Invalid email or password. Please try again.",
+        }, status=400)
+
+    return Response({
+        'message': "logged in"
+    }, status=200)
 
 
 @api_view(['GET'])
