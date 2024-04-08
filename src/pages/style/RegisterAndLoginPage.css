@@ -1,4 +1,4 @@
-.register-page {
+.register-page, .login-page {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -7,7 +7,7 @@
     min-height: calc(100vh - 65px);
 }
 
-.register-page form {
+.register-page form, .login-page form  {
     display: flex;
     flex-direction: column;
     min-height: 500px;
@@ -18,13 +18,13 @@
     border-radius: 15px;
 }
 
-.register-page label {
+.register-page label, .login-page label {
     display: flex;
     flex-direction: column;
     width: 80%;
 }
 
-.register-page #error {
+.register-page #error, .login-page #error {
     color: #df0000;
     margin: 0 10%;
     text-align: center;

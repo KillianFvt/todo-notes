@@ -9,6 +9,7 @@ import {
 import {AddNotePage} from "./pages/AddNotePage";
 import {RegisterPage} from "./pages/RegisterPage";
 import {LogoutPage} from "./pages/LogoutPage";
+import {LoginPage} from "./pages/LoginPage";
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/notes/add" exact element={<AddNotePage/>}/>
                 <Route path="/note/add" exact element={<AddNotePage/>}/>
                 <Route path="/account/register" exact element={<RegisterPage/>}/>
+                <Route path="/account/login" exact element={<LoginPage/>}/>
                 <Route path="/account/logout" exact element={<LogoutPage/>}/>
             </Routes>
         </Router>

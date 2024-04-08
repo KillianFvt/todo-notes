@@ -2,7 +2,7 @@ import {useState} from "react";
 import { validate } from 'react-email-validator';
 import Cookies from "js-cookie";
 import {useNavigate} from "react-router-dom";
-import './style/RegisterPage.css';
+import './style/RegisterAndLoginPage.css';
 
 export const RegisterPage = () => {
 

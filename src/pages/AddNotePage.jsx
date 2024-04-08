@@ -14,7 +14,7 @@ export const AddNotePage = () => {
         e.preventDefault();
         const csrftokenValue = Cookies.get('csrftoken');
         await fetch(
-            `/note/add/`,
+            `api/note/add/`,
             {
                 method: "POST",
                 headers: {

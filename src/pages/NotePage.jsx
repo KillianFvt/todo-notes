@@ -17,7 +17,7 @@ export const NotePage = () => {
     }, []);
 
     let getNote = async () => {
-        let response = fetch(`/note/${id}`);
+        let response = fetch(`api/note/${id}`);
         let data = (await response).json();
         setNote(await data);
     }

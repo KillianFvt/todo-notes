@@ -9,14 +9,16 @@ export const Header = () => {
     const location = useLocation();
 
     useEffect(() => {
-        const fetchUser = async () => {
-            let response = await fetch('/account/get-current-user/');
-            let data = await response.json();
-            console.log(data)
-            setUser(data);
-        };
+    const fetchUser = async () => {
+        let response = await fetch(
+            '/account/get-current-user/'
+        );
+        let data = await response.json();
+        console.log(data)
+        setUser(data);
+    };
 
-        fetchUser().then(r => {});
+    fetchUser();
     }, [location]);
 
     return (

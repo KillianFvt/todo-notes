@@ -12,7 +12,7 @@ export const NoteListPage = () => {
     }, []);
 
     let getNotes = async () => {
-        let response = await fetch('/notes/');
+        let response = await fetch('api/notes/');
         let data = response.json();
         setNotes(await data);
     }
